@@ -1,7 +1,5 @@
 # AlphaFold3. Grupo Química Bioorgánica - UZ
 
-Hola
-
 ## Cómo hacer tu primera predicción
 
 AlphaFold puede ser ejectuado con el siguiente comando:
