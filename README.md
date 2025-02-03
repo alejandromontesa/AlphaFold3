@@ -25,7 +25,7 @@ Además, el comando `run_alphafold.py` puede recibir varias flags que no han sid
 * `--run_data_pipeline` (su valor por defecto es true), determina si se ejectua la pipeline, la búsqueda de modelos (require de CPU y es bastante costosa computacionalmente hablando)
 * `--run_inference` (su valor por defecto es true), determina si se ejectura la inferencia (requiere de GPU)
 
-Por ahora, solo podremos ejecutar AlphaFold3 en **Polux**, para lo que recomendamos crear una carpeta `/Alphafold` dentro de `/media/disk2/user_name` donde `user_name` es vuestro usuario en cada caso.
+Por ahora, solo podremos ejecutar AlphaFold3 en **Castor** y **Polux**, para lo que recomendamos crear una carpeta `/Alphafold` dentro de `/media/disk2/user_name` donde `user_name` es vuestro usuario en cada caso.
 
 ## Formato del input de AlphaFold3
 
