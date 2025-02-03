@@ -85,4 +85,48 @@ El resto de parámetros no se utilizan normalmente.
 
 Especifica un ligando de una de las 3 formas siguientes:
 
-* Código CCD: forma más fácil de especificar ligandos. 
+* Código CCD: forma más fácil de especificar ligandos. Los ligandos definidos de esta forma se pueden enlazar covalentemente con otras entidades
+* Código SMILES: esto permite especificar ligandos que no están en el CCD. Al usar el código SMILES, no se pueden enlazar covalentemente con otras entidades, pues estos códigos no dependen de nombres atómicos específicos - para este caso es mejor usar la siguiente opción
+* CCD proporcionado por el usuario + código de ligando personalizado. Esto permite especificar ligandos que no están en el CDD, pero al mismo tiempo permite que indicar enlaces covalentes con otras entidades. Ofrece más flexibilidad pero require más atención para que todos los detalles sean correctos
+
+```json
+{
+  "ligand": {
+    "id": ["G", "H", "I"],
+    "ccdCodes": ["ATP"]
+  }
+},
+{
+  "ligand": {
+    "id": "J",
+    "ccdCodes": ["LIG-1337"]
+  }
+},
+{
+  "ligand": {
+    "id": "K",
+    "smiles": "CC(=O)OC1C[NH+]2CCC1CC2"
+  }
+}
+```
+
+Donde:
+
+* `id: str | list[str]`: letra mayúscula (o múltiples letras) que indican el ID único del ligando. Este ID se utiliza como output en el fichero mmCIF. Al especificar una lista de IDs (como `["A", "B", "C"]`) el mismo ligando tendrá varias copias
+* `ccdCodes :list[str]`: lista opcional de códigos CCD. Pueden ser códigos CCD estándar o proporcionados por el usuario
+* `smiles: str`: cadena de texto opcional que define el ligando usando el cógido SMILES. La cadena de texto debe estar escapada correctamente.
+
+Cada ligando debe ser especificado usando códigos CCD o SMILES pero no ambos, es decir, para un ligando específico, el campo `ccdCodes` y `smiles` son mutuamente exclusivos.
+
+#### Escapar cadenas SMILES en JSON
+
+La cadena de texto SMILES debe ser correctamente escapada, en particular el carácter `\` debe ser escapada como `\\`, sino obtendremos un error. Por ejemplo el código SMILES `CCC[C@@H](0)CC\C=C\C#C##C#C\C=C\CO` debe ser especificado de la siguiente forma:
+
+```json
+{
+  "ligand": {
+    "id": "A",
+    "smiles": "CCC[C@@H](O)CC\\C=C\\C=C\\C#CC#C\\C=C\\CO"
+  }
+}
+```
