@@ -18,7 +18,7 @@ docker run -it \
     --output_dir=/root/af_output
 ```
 
-El cual se puede encontrar en el [repositorio original de Alphafold3](https://github.com/google-deepmind/alphafold3); sin embargo, nosotros usaremos el script `alphafold3.sh` que se puede encontrar en la carpeta `/scripts`. La ventaja de este script es que podremos ejecutar AlphaFold3 desde cualquier carpeta sin preocuparnos por modificar las rutas del Docker o la máquina virtual. El script `alphafold3_2.0.sh` que se encuentra en la misma carpeta, es una versión mejorada del anterior que asegura que el campo *name* del fichero `.json` es recogido correctamente, gracias al paquete [`jq`](https://jqlang.org/) el cual tenemos instalado en nuestras máquinas.
+El cual se puede encontrar en el [repositorio original de Alphafold3](https://github.com/google-deepmind/alphafold3); sin embargo, nosotros usaremos el script `alphafold3_2.0.sh` que se puede encontrar en la carpeta `/scripts`. La ventaja de este script es que podremos ejecutar AlphaFold3 desde cualquier carpeta sin preocuparnos por modificar las rutas del Docker o la máquina virtual. Este script es una versión mejorada del anterior que asegura que el campo *name* del fichero `.json` es recogido correctamente, gracias al paquete [`jq`](https://jqlang.org/) el cual tenemos instalado en nuestras máquinas.
 
 Además, el comando `run_alphafold.py` puede recibir varias flags que no han sido incluidas en el script. Dos de las flags más utilizadas y que controlan que partes de AlphaFold3 son ejectuadas son:
 
