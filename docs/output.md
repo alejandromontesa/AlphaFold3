@@ -2,7 +2,7 @@
 
 ## Estructura del directorio 
 
-Para nuestros trabajos, AlphaFold3 escribe todos los ficheros de salida en un directo que tiene una versión curada del nombre del trabajo que ponemos en el primer campo del fichero .json (*name*). Es decir, si en el campo *name* ponemos el nombre "Mi primera prueba", AlphaFold3 escribirá  los ficheros de salida en un directorio llamado `mi_primera_prueba`. Por ello y para que nuestro script `alphafold3_2.0.sh`funcione correctamente, recomendamos nombras los trabajos siguiendo la convención *snake case* para el nombre de variables. Si el directorio que AlphaFold3 va a crear ya existe, se añadirá la fecha al nomrbe del directorio para evitar que se sobreescriban los datos.
+Para nuestros trabajos, AlphaFold3 escribe todos los ficheros de salida en un directo que tiene una versión curada del nombre del trabajo que ponemos en el primer campo del fichero .json (*name*). Es decir, si en el campo *name* ponemos el nombre "Mi primera prueba", AlphaFold3 escribirá  los ficheros de salida en un directorio llamado `mi_primera_prueba`. Por ello y para que nuestro script `alphafold3_2.0.sh`funcione correctamente, recomendamos nombrar los trabajos siguiendo la convención *snake case* para el nombre de variables. Si el directorio que AlphaFold3 va a crear ya existe, se añadirá la fecha al nomrbe del directorio para evitar que se sobreescriban los datos.
 
 En el directorio de salida se sigue la siguiente estructura:
 
